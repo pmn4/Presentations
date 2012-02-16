@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width = device-width" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	
+	<title>Control Panel | Group Commerce Standard Web Framework</title>
+	<meta name="description" content="An in-depth look into the code that drive our Control Panel functionality." />
+	<meta name="author" content="Pat Newell (@GCpmn)" />
+
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+	<link href="styles/control-panel.css" rel="stylesheet" />
+</head>
+<body>
+<!-- #region Presentation -->
+	
+	<div id="impress" class="impress-not-supported">
+
+	<div class="fallback-message">
+		<p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+		<p>For the best experience please use the latest <b>Chrome</b> or <b>Safari</b> browser. Firefox 10 (to be released soon) will also handle it.</p>
+	</div>
+	
+		<div id="control-panel" class="step circle" data-scale="4" data-x="0" data-y="0" data-z="1000" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			<h3>Control Panel</h3>
+		</div>
+
+		<div id="pub-admin" class="step circle" data-scale="4" data-x="650" data-y="-1150" data-z="-400" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			<h3>Pub Admin</h3>
+		</div>
+
+		<div class="step circle" data-scale="4" data-x="0" data-y="0" data-z="1000" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			<h3>Control Panel</h3>
+		</div>
+
+		<div class="step" data-scale="3" data-x="-1000" data-y="-650" data-z="-4000" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			Models
+		</div>
+
+		<div class="step" data-scale="2" data-x="-1550" data-y="-25" data-z="-5000" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			<h2>The Base: ControlPanelBaseViewModel.cs</h2>
+			<img src="images/controlpanelbaseviewmodel.png"/>
+		</div>
+
+		<div class="step" data-scale="2" data-x="-1550" data-y="1100" data-z="-5000" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			<h2>Implementing the Base:</h2>
+			<img src="images/menuviewmodel.png"/>
+		</div>
+
+		<div class="step" data-scale="2" data-x="-1550" data-y="2250" data-z="-5000" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			<h2>Setting Defaults:</h2>
+			<img src="images/mainmenuviewmodel.png"/>
+		</div>
+
+		<div class="step" data-scale="3" data-x="-2300" data-y="00" data-z="-4000" data-rotate="90" data-rotate-x="0" data-rotate-y="0">
+			Views
+		</div>
+
+		<div class="step" data-scale="2" data-x="-3500" data-y="-100" data-z="-5000" data-rotate="90" data-rotate-x="0" data-rotate-y="0">
+			<h2>That looks familiar...</h2>
+			<img src="images/editview.png"/>
+		</div>
+
+		<div class="step circle" data-scale="4" data-x="0" data-y="0" data-z="1000" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			<h3>Control Panel</h3>
+		</div>
+
+		<div id="data-storage" class="step circle" data-scale="4" data-x="1400" data-y="-250" data-z="-900" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			<h3>Data Storage</h3>
+		</div>
+
+		<div class="step" data-scale="2" data-x="4000" data-y="0" data-z="-5000" data-rotate="-90" data-rotate-x="0" data-rotate-y="0">
+			<h2>The Database</h2>
+			<img src="images/applicationdata.png"/>
+		</div>
+
+		<div class="step" data-scale="2" data-x="4000" data-y="-2000" data-z="-5000" data-rotate="-90" data-rotate-x="0" data-rotate-y="0">
+			<h2>the json</h2>
+			<img src="images/datamapping1.png"/>
+		</div>
+
+		<div class="step" data-scale="2" data-x="4000" data-y="-2000" data-z="-5000" data-rotate="-90" data-rotate-x="0" data-rotate-y="0">
+			<h2 style="padding-left: 225px;">the Object</h2>
+			<img src="images/datamapping2.png"/>
+		</div>
+
+		<div class="step" data-scale="2" data-x="4000" data-y="-2000" data-z="-5000" data-rotate="-90" data-rotate-x="0" data-rotate-y="0">
+			<h2 style="text-align: right;">Data Mapping</h2>
+			<img src="images/datamapping3.png"/>
+		</div>
+
+		<div id="your-site" class="step circle" data-scale="4" data-x="1180" data-y="900" data-z="-1400" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			<h3>Your Site</h3>
+		</div>
+
+		<div class="step" data-scale="2" data-x="4000" data-y="2000" data-z="-5000" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			<h2>Use in the View</h2>
+			<img src="images/useinview.png"/>
+		</div>
+
+		<div class="step" data-scale="2" data-x="4000" data-y="2000" data-z="-5000" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			<h2 style="text-align: right;padding-right: 200px;">But wait...</h2>
+			<img src="images/useinview-nocontrolpanel.png"/>
+		</div>
+
+		<div class="step" data-scale="2" data-x="4000" data-y="3500" data-z="-5000" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			<h3 style="padding-right: 200px;">"the U-N-O Competitah, I'm ten steps ahead of ya"</h3>
+			<h4 style="text-align: right;padding-right:200px;">~Lil' Kim</h4>
+			<img src="images/getapplicationdata-np.png"/>
+		</div>
+
+		<div id="questions" class="step circle" data-scale="4" data-x="120" data-y="1550" data-z="-1900" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			<h3>Got Qs?</h3>
+		</div>
+
+		<div class="step" data-scale="2" data-x="0" data-y="5000" data-z="0" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			<img src="images/anonocat.png"/>
+		</div>
+	</div>
+
+<!-- #endregion -->
+
+	<div class="hint">
+		<p>Use a spacebar or arrow keys to navigate</p>
+	</div>
+	<script>
+		if ("ontouchstart" in document.documentElement) {
+			document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+		}
+	</script>
+
+	<script src="../../impress.js/js/impress.js"></script>
+	<script>impress();</script>
+</body>
+</html>

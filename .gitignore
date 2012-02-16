@@ -1,0 +1,6 @@
+
+/.ssh/id_rsa
+/.ssh/id_rsa.ppk
+/.ssh/id_rsa.pub
+*.sass-cache
+*sass-cache
