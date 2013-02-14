@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width = device-width" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	
+	<title>Kentucky Waterfall | Building Upon Those Luscious Swayze Locks</title>
+	<meta name="description" content="Ideas for building upon the Valet Platform" />
+	<meta name="author" content="Pat Newell (@GCpmn)" />
+
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+	<link href="styles/control-panel.css" rel="stylesheet" />
+</head>
+<body>
+<!-- #region Presentation -->
+	
+	<div id="impress" class="impress-not-supported">
+
+	<div class="fallback-message">
+		<p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+		<p>For the best experience please use the latest <b>Chrome</b> or <b>Safari</b> browser. Firefox 10 (to be released soon) will also handle it.</p>
+	</div>
+
+		<div class="step site" data-scale="1" data-x="0" data-y="0" data-z="-1000" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			<div class="main-page page-source">
+				<figure class="front">
+					<img src="./images/buzzfeed.png" data-zoom-x="" />
+				</figure>
+				<figure class="back">
+					<img src="./images/html-source.png" />
+					<img src="./images/script-tag.png" data-style-top="487" style="padding:5px 0;border:2px solid red;margin:-7px -2px;box-shadow:0 0 10px #000" />
+				</figure>
+			</div>
+		</div>
+
+		<div id="anonocat" class="step" data-scale="2" data-x="0" data-y="5000" data-z="0" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
+			<img src="images/anonocat.png"/>
+		</div>
+	</div>
+
+<!-- #endregion -->
+
+	<div class="hint">
+		<p>Use a spacebar or arrow keys to navigate</p>
+	</div>
+	<script>
+		if ("ontouchstart" in document.documentElement) {
+			document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+		}
+	</script>
+
+	<script src="./scripts/jquery.min.js"></script>
+	<script>
+	$(function(){
+		// var $window = $(window),
+		//     toHeight = $window.height() * 0.8,
+		//     toWidth = $window.width() * 0.8 / 2;
+
+		// $("iframe").each(function(){
+		// 	var $this = $(this),
+		// 	height = 400,
+		// 	width = 600,
+		// 	ratio = height / $this.height();
+
+		// 	$this.css({
+		// 		height: Math.floor(height / ratio) + "px",
+		// 		width: Math.floor(width / ratio) + "px",
+		// 		"-webkit-transform": "scale(" + ratio + ", " + ratio + ")",
+		// 		"-webkit-transform-origin": "center center",
+		// 	})
+		// });
+
+		$(".page-source").each(function(){
+			var $slide = $(this);
+			$slide.find("figure img")
+				.each(function(){
+					var $img = $(this);
+					if($img.data("style-top"))
+						$img.css({
+							position: "absolute",
+							top: Math.round($img.data("style-top") * $slide.width() / $img.width()) + "px",
+							"-webkit-transform": "translateZ(100px)",
+						});
+					$img.css({width: $slide.width() + "px"})
+				});
+		})
+		setInterval(function(){
+			$(".page-source").toggleClass("flipped");
+		}, 3000);
+	});
+	</script>
+	<script src="../../impress.js/js/impress.js"></script>
+	<script>
+		var impress = impress();
+
+		document.addEventListener("impress:stepenter", function(e) {
+			console.log(arguments);
+		})
+	</script>
+</body>
+</html>

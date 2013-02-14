@@ -1,0 +1,561 @@
+/* #region Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 19, control-panel.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 30, control-panel.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 33, control-panel.scss */
+body {
+  line-height: 1;
+}
+
+/* line 36, control-panel.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 39, control-panel.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 43, control-panel.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 48, control-panel.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* #endregion */
+/* #region The Goods */
+/* line 74, control-panel.scss */
+body {
+  font-family: 'PT Sans', sans-serif;
+  min-height: 740px;
+  color: white;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(50%, #000066), color-stop(100%, #000033));
+  background: -webkit-radial-gradient(#000066 50%, #000033 100%);
+  background: -moz-radial-gradient(#000066 50%, #000033 100%);
+  background: -o-radial-gradient(#000066 50%, #000033 100%);
+  background: radial-gradient(#000066 50%, #000033 100%);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 85, control-panel.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 86, control-panel.scss */
+i, em {
+  font-style: italic;
+}
+
+/* line 88, control-panel.scss */
+a {
+  color: inherit;
+  text-decoration: none;
+  padding: 0 0.1em;
+  background: rgba(255, 255, 255, 0.5);
+  text-shadow: -1px -1px 2px rgba(100, 100, 100, 0.9);
+  border-radius: 0.2em;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* line 103, control-panel.scss */
+a:hover {
+  background: white;
+  text-shadow: -1px -1px 2px rgba(100, 100, 100, 0.5);
+}
+
+/* enable clicking on elements 'hiding' behind body in 3D */
+/* line 109, control-panel.scss */
+body {
+  pointer-events: none;
+}
+
+/* line 110, control-panel.scss */
+#impress {
+  pointer-events: auto;
+}
+
+/* COMMON STEP STYLES */
+/* line 114, control-panel.scss */
+.step {
+  padding: 40px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'PT Serif', georgia, serif;
+  font-size: 48px;
+  line-height: 1.5;
+}
+
+/* fade out inactive slides */
+/* line 132, control-panel.scss */
+.step {
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+/* line 140, control-panel.scss */
+.step:not(.active) {
+  opacity: 0.3;
+}
+
+/* STEP SPECIFIC STYLES */
+/* hint on the first slide */
+/* line 148, control-panel.scss */
+.hint {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 200px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #EEE;
+  text-align: center;
+  font-size: 50px;
+  padding: 20px;
+  z-index: 100;
+  opacity: 0;
+  -webkit-transform: translateY(400px);
+  -moz-transform: translateY(400px);
+  -ms-transform: translateY(400px);
+  -o-transform: translateY(400px);
+  transform: translateY(400px);
+  -webkit-transition: opacity 1s, -webkit-transform 0.5s 1s;
+  -moz-transition: opacity 1s,    -moz-transform 0.5s 1s;
+  -ms-transition: opacity 1s,     -ms-transform 0.5s 1s;
+  -o-transition: opacity 1s,      -o-transform 0.5s 1s;
+  transition: opacity 1s,         transform 0.5s 1s;
+}
+
+/* line 178, control-panel.scss */
+.step-bored + .hint {
+  opacity: 1;
+  -webkit-transition: opacity 1s 5s, -webkit-transform 0.5s;
+  -moz-transition: opacity 1s 5s,    -moz-transform 0.5s;
+  -ms-transition: opacity 1s 5s,     -ms-transform 0.5s;
+  -o-transition: opacity 1s 5s,      -o-transform 0.5s;
+  transition: opacity 1s 5s,         transform 0.5s;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+/* impress.js title */
+/* line 196, control-panel.scss */
+#title {
+  padding: 0;
+}
+
+/* line 200, control-panel.scss */
+#title .try {
+  font-size: 64px;
+  position: absolute;
+  top: -0.5em;
+  left: 1.5em;
+  -webkit-transform: translateZ(20px);
+  -moz-transform: translateZ(20px);
+  -ms-transform: translateZ(20px);
+  -o-transform: translateZ(20px);
+  transform: translateZ(20px);
+}
+
+/* line 213, control-panel.scss */
+#title h1 {
+  font-size: 190px;
+  -webkit-transform: translateZ(50px);
+  -moz-transform: translateZ(50px);
+  -ms-transform: translateZ(50px);
+  -o-transform: translateZ(50px);
+  transform: translateZ(50px);
+}
+
+/* line 223, control-panel.scss */
+#title .footnote {
+  font-size: 32px;
+}
+
+/* big thoughts */
+/* line 229, control-panel.scss */
+#big {
+  width: 600px;
+  text-align: center;
+  font-size: 60px;
+  line-height: 1;
+}
+
+/* line 236, control-panel.scss */
+#big b {
+  display: block;
+  font-size: 250px;
+  line-height: 250px;
+}
+
+/* line 242, control-panel.scss */
+#big .thoughts {
+  font-size: 90px;
+  line-height: 150px;
+}
+
+/* tiny ideas */
+/* line 249, control-panel.scss */
+#tiny {
+  width: 500px;
+  text-align: center;
+}
+
+/* line 254, control-panel.scss */
+#ing {
+  width: 500px;
+}
+
+/* line 258, control-panel.scss */
+#ing b {
+  display: inline-block;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* line 267, control-panel.scss */
+#ing.active .positioning {
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+  transform: translateY(-10px);
+  -webkit-transition-delay: 1.5s;
+  -moz-transition-delay: 1.5s;
+  -ms-transition-delay: 1.5s;
+  -o-transition-delay: 1.5s;
+  transition-delay: 1.5s;
+}
+
+/* line 281, control-panel.scss */
+#ing.active .rotating {
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+  -webkit-transition-delay: 1.75s;
+  -moz-transition-delay: 1.75s;
+  -ms-transition-delay: 1.75s;
+  -o-transition-delay: 1.75s;
+  transition-delay: 1.75s;
+}
+
+/* line 295, control-panel.scss */
+#ing.active .scaling {
+  -webkit-transform: scale(0.7);
+  -moz-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  -o-transform: scale(0.7);
+  transform: scale(0.7);
+  -webkit-transition-delay: 2s;
+  -moz-transition-delay: 2s;
+  -ms-transition-delay: 2s;
+  -o-transition-delay: 2s;
+  transition-delay: 2s;
+}
+
+/* imagination */
+/* line 312, control-panel.scss */
+#imagination {
+  width: 600px;
+}
+
+/* line 316, control-panel.scss */
+#imagination .imagination {
+  font-size: 78px;
+}
+
+/* use the source, Luke */
+/* line 322, control-panel.scss */
+#source {
+  width: 700px;
+  padding-bottom: 300px;
+  /* Yoda Icon :: Pixel Art from Star Wars http://www.pixeljoint.com/pixelart/1423.htm */
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAMAAACwUBm+AAAAAXNSR0IArs4c6QAAAKtQTFRFsAAAvbWSLUUrLEQqY1s8UYJMqJ1vNTEgOiIdIzYhjIFVLhsXZ6lgSEIsP2U8JhcCVzMsSXZEgXdOO145XJdWOl03LzAYMk4vSXNExr+hwcuxRTs1Qmk+RW9Am49eFRANQz4pUoNMQWc+OSMDTz0wLBsCNVMxa2NBOyUDUoNNSnlEWo9VRGxAVzYFl6tXCggHbLNmMUIcHhwTXkk5f3VNRT8wUT8xAAAACQocRBWFFwAAAAF0Uk5TAEDm2GYAAAPCSURBVHja7d3JctNAFIZRMwRCCGEmzPM8z/D+T8bu/ptbXXJFdij5fMt2Wuo+2UgqxVmtttq5WVotLzBgwIABAwYMGDCn0qVqbo69psPqVpWx+1XG5iaavF8wYMCAAQMGDBgwi4DJ6Y6qkxB1HNlcN3a92gbR5P2CAQMGDBgwYMCAWSxMlrU+UY5yu2l9okfV4bAxUVbf7TJnAwMGDBgwYMCAAbMLMHeqbGR82Zy+VR1Ht81nVca6R+UdTLaU24Ruzd3qM/e4yjnAgAEDBgwYMGDA7AJMd1l/3NRdVGcj3eX/2WEhCmDGxnM7yqygu8XIPjJj8iN/MGDAgAEDBgwYMAuDGb8q0RGlLCHLv1t9qDKWn3vdNHVuEI6HPaxO9Jo3GDBgwIABAwYMmIXBdC9ShGgMk+XnkXUeuGcsP/e1+lhNnZsL/G5Vs3OAAQMGDBgwYMCAWSxMR3SzOmraG5atdy9wZKzb+vg16qyqe2FltbnAgAEDBgwYMGDALAxmTJSuN3WA76rnVca6GTnemGN1WoEBAwYMGDBgwIBZGMxUomy4+xO899V4LAg5Xnc2MGDAgAEDBgwYMGA218Wq+2K1LDqvY9xZu8zN8fICdM6btYABAwYMGDBgwIABMzfH0+pGU5afze2tXebmeAfVz+p8BQYMGDBgwIABAwbMPBzZ+oWmfJrln1273FhkbHzee9WWbw7AgAEDBgwYMGDALAKm43hcdctKgblcPamOhuXnXlY5Xs6bsW4FGyQCAwYMGDBgwIABswiYMceZKgvMo+h8mrHLTdn676rj+FEFoTtHd8MwOxEYMGDAgAEDBgyYRcBM5UhXqiymW3R3c9ARhWO/OmjqfjVZy+xEYMCAAQMGDBgwYBYG073OnCV0RFNhMhaOa9WfKmOB6XjHMN1tQmaAAQMGDBgwYMCA2VWY7vXjz1U4croAzgPztwIDBgwYMGDAgAEDZhswh035NBw59Dww3RgYMGDAgAEDBgwYMJuD6f4tXT7NUqfCdBvZLkxXdgQGDBgwYMCAAQNmt2DGj8WzwAfV/w7T/aq7mxwwYMCAAQMGDBgwuwqTOo7uTwTngflSzQ3TdaJvAwEDBgwYMGDAgAED5gSvgbyo5oHZ4Pc+gwEDBgwYMGDAgAEzhOm+5G0qTGaAAQMGDBgwYMCAAXNaMOcnls3tNwWm+zRzp54NDBgwYMCAAQMGDJh5YNL36k1TLuGvVq+qnKMbS5n7tulT9asCAwYMGDBgwIABA2ZumKuztLnjgQEDBgwYMGDAgNl5mH/4/ltKA6vBNAAAAABJRU5ErkJggg==);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+
+/* line 332, control-panel.scss */
+#source q {
+  font-size: 60px;
+}
+
+/* it's in 3D */
+/* line 338, control-panel.scss */
+#its-in-3d p {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  /* Y U need this Firefox?! */
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* line 347, control-panel.scss */
+#its-in-3d span,
+#its-in-3d b {
+  display: inline-block;
+  -webkit-transform: translateZ(40px);
+  -moz-transform: translateZ(40px);
+  -ms-transform: translateZ(40px);
+  -o-transform: translateZ(40px);
+  transform: translateZ(40px);
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/* line 362, control-panel.scss */
+#its-in-3d .have {
+  -webkit-transform: translateZ(-40px);
+  -moz-transform: translateZ(-40px);
+  -ms-transform: translateZ(-40px);
+  -o-transform: translateZ(-40px);
+  transform: translateZ(-40px);
+}
+
+/* line 370, control-panel.scss */
+#its-in-3d .you {
+  -webkit-transform: translateZ(20px);
+  -moz-transform: translateZ(20px);
+  -ms-transform: translateZ(20px);
+  -o-transform: translateZ(20px);
+  transform: translateZ(20px);
+}
+
+/* line 378, control-panel.scss */
+#its-in-3d .noticed {
+  -webkit-transform: translateZ(-40px);
+  -moz-transform: translateZ(-40px);
+  -ms-transform: translateZ(-40px);
+  -o-transform: translateZ(-40px);
+  transform: translateZ(-40px);
+}
+
+/* line 386, control-panel.scss */
+#its-in-3d .its {
+  -webkit-transform: translateZ(60px);
+  -moz-transform: translateZ(60px);
+  -ms-transform: translateZ(60px);
+  -o-transform: translateZ(60px);
+  transform: translateZ(60px);
+}
+
+/* line 394, control-panel.scss */
+#its-in-3d .in {
+  -webkit-transform: translateZ(-10px);
+  -moz-transform: translateZ(-10px);
+  -ms-transform: translateZ(-10px);
+  -o-transform: translateZ(-10px);
+  transform: translateZ(-10px);
+}
+
+/* line 402, control-panel.scss */
+#its-in-3d .footnote {
+  font-size: 32px;
+  -webkit-transform: translateZ(-10px);
+  -moz-transform: translateZ(-10px);
+  -ms-transform: translateZ(-10px);
+  -o-transform: translateZ(-10px);
+  transform: translateZ(-10px);
+}
+
+/* line 413, control-panel.scss */
+#its-in-3d.active span,
+#its-in-3d.active b {
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+  -webkit-transition-delay: 1s;
+  -moz-transition-delay: 1s;
+  -ms-transition-delay: 1s;
+  -o-transition-delay: 1s;
+  transition-delay: 1s;
+}
+
+/* overview step */
+/* line 429, control-panel.scss */
+#overview {
+  z-index: -1;
+  padding: 0;
+}
+
+/* on overview step everything is visible */
+/* line 436, control-panel.scss */
+#impress.step-overview .step {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* IMPRESS NOT SUPPORTED STYLES */
+/* line 443, control-panel.scss */
+.fallback-message {
+  font-family: sans-serif;
+  line-height: 1.3;
+  display: none;
+  width: 780px;
+  padding: 10px 10px 0;
+  margin: 20px auto;
+  border-radius: 10px;
+  border: 1px solid #E4C652;
+  background: #EEDC94;
+}
+
+/* line 457, control-panel.scss */
+.fallback-message p {
+  margin-bottom: 10px;
+}
+
+/* line 461, control-panel.scss */
+.impress-not-supported .step {
+  position: relative;
+  opacity: 1;
+  margin: 20px auto;
+}
+
+/* line 467, control-panel.scss */
+.impress-not-supported .fallback-message {
+  display: block;
+}
+
+/* line 474, control-panel.scss */
+.circle {
+  width: 250px;
+  height: 250px;
+  padding: 70px 25px;
+  -webkit-border-radius: 125px;
+  -moz-border-radius: 125px;
+  -ms-border-radius: 125px;
+  -o-border-radius: 125px;
+  border-radius: 125px;
+  border: 10px solid white;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  line-height: 0.9em;
+}
+
+/* line 486, control-panel.scss */
+#questions {
+  padding-top: 90px;
+}
+
+/* line 490, control-panel.scss */
+#anonocat {
+  text-align: center;
+}
+
+/* line 494, control-panel.scss */
+.page-source {
+  position: relative;
+  width: 600px;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  zoom: 1;
+}
+/* line 61, control-panel.scss */
+.page-source:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  font-size: 0;
+  visibility: hidden;
+}
+
+/* line 510, control-panel.scss */
+.page-source.flipped {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+/* line 517, control-panel.scss */
+.page-source figure {
+  display: block;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* line 526, control-panel.scss */
+.page-source figure:first-child {
+  position: relative;
+  float: left;
+}
+
+/* line 534, control-panel.scss */
+.page-source .back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
