@@ -24,10 +24,10 @@
 		<p>For the best experience please use the latest <b>Chrome</b> or <b>Safari</b> browser. Firefox 10 (to be released soon) will also handle it.</p>
 	</div>
 
-		<div class="step site" data-scale="1" data-x="0" data-y="0" data-z="-1000" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
-			<div class="main-page page-source">
+		<div class="step site" id="main-page" data-scale="1" data-x="500" data-y="250" data-z="0" data-rotate="0" data-rotate-x="0" data-rotate-y="90">
+			<div class="content page-source">
 				<figure class="front">
-					<img src="./images/buzzfeed.png" data-zoom-x="" />
+					<img src="./images/home-page.png" data-zoom-x="" />
 				</figure>
 				<figure class="back">
 					<img src="./images/html-source.png" />
@@ -36,8 +36,47 @@
 			</div>
 		</div>
 
-		<div id="anonocat" class="step" data-scale="2" data-x="0" data-y="5000" data-z="0" data-rotate="0" data-rotate-x="0" data-rotate-y="0">
-			<img src="images/anonocat.png"/>
+		<div class="step site" id="category-page" data-scale="1" data-x="0" data-y="0" data-z="0" data-rotate="0" data-rotate-x="0" data-rotate-y="90">
+			<div class="content page-source">
+				<figure class="front">
+					<img src="./images/category-page.png" data-zoom-x="" />
+				</figure>
+				<figure class="back">
+					<img src="./images/html-source.png" />
+					<img src="./images/script-tag.png" data-style-top="487" style="padding:5px 0;border:2px solid red;margin:-7px -2px;box-shadow:0 0 10px #000" />
+				</figure>
+			</div>
+		</div>
+
+		<div class="step site" id="article-page" data-scale="1" data-x="-500" data-y="-250" data-z="0" data-rotate="0" data-rotate-x="0" data-rotate-y="90">
+			<div class="content page-source">
+				<figure class="front">
+					<img src="./images/article-page.png" data-zoom-x="" />
+				</figure>
+			</div>
+		</div>
+
+		<div class="step site" id="view-source" data-scale="1" data-x="-501" data-y="-250" data-z="0" data-rotate="0" data-rotate-x="0" data-rotate-y="270">
+			<div class="content page-source">
+				<figure class="front">
+					<img src="./images/html-source.png" />
+					<img src="./images/script-tag.png" data-style-top="487" style="padding:5px 0;border:2px solid red;margin:-7px -2px;box-shadow:0 0 10px #000" />
+				</figure>
+			</div>
+		</div>
+
+		<div class="step" data-scale="1" data-x="0" data-y="0" data-z="01" data-rotate="0" data-rotate-x="0" data-rotate-y="360">
+			<div style="width:2000px;">
+				<div class="kentucky-waterfall">
+					<img src="./images/main-page.png" data-zoom-x="" />
+				</div>
+				<div class="kentucky-waterfall">
+					<img src="./images/category-page.png" data-zoom-x="" />
+				</div>
+				<div class="kentucky-waterfall">
+					<img src="./images/article-page.png" data-zoom-x="" />
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -82,23 +121,21 @@
 						$img.css({
 							position: "absolute",
 							top: Math.round($img.data("style-top") * $slide.width() / $img.width()) + "px",
-							"-webkit-transform": "translateZ(100px)",
 						});
 					$img.css({width: $slide.width() + "px"})
 				});
 		})
-		setInterval(function(){
-			$(".page-source").toggleClass("flipped");
-		}, 3000);
+		// setInterval(function(){
+		// 	$(".page-source").toggleClass("flipped");
+		// }, 3000);
 	});
 	</script>
 	<script src="../../impress.js/js/impress.js"></script>
 	<script>
-		var impress = impress();
+		impress();
 
-		document.addEventListener("impress:stepenter", function(e) {
-			console.log(arguments);
-		})
+		console.log(window.impress);
+
 	</script>
 </body>
 </html>

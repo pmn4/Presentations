@@ -64,7 +64,7 @@ table {
 /* #region The Goods */
 /* line 74, control-panel.scss */
 body {
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
   min-height: 740px;
   color: white;
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(50%, #000066), color-stop(100%, #000033));
@@ -126,7 +126,7 @@ body {
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: 'PT Serif', georgia, serif;
+  font-family: "PT Serif", georgia, serif;
   font-size: 48px;
   line-height: 1.5;
 }
@@ -143,7 +143,7 @@ body {
 
 /* line 140, control-panel.scss */
 .step:not(.active) {
-  opacity: 0.3;
+  opacity: 0.8;
 }
 
 /* STEP SPECIFIC STYLES */
@@ -167,20 +167,20 @@ body {
   -o-transform: translateY(400px);
   transform: translateY(400px);
   -webkit-transition: opacity 1s, -webkit-transform 0.5s 1s;
-  -moz-transition: opacity 1s,    -moz-transform 0.5s 1s;
-  -ms-transition: opacity 1s,     -ms-transform 0.5s 1s;
-  -o-transition: opacity 1s,      -o-transform 0.5s 1s;
-  transition: opacity 1s,         transform 0.5s 1s;
+  -moz-transition: opacity 1s, -moz-transform 0.5s 1s;
+  -ms-transition: opacity 1s, -ms-transform 0.5s 1s;
+  -o-transition: opacity 1s, -o-transform 0.5s 1s;
+  transition: opacity 1s, transform 0.5s 1s;
 }
 
 /* line 178, control-panel.scss */
 .step-bored + .hint {
   opacity: 1;
   -webkit-transition: opacity 1s 5s, -webkit-transform 0.5s;
-  -moz-transition: opacity 1s 5s,    -moz-transform 0.5s;
-  -ms-transition: opacity 1s 5s,     -ms-transform 0.5s;
-  -o-transition: opacity 1s 5s,      -o-transform 0.5s;
-  transition: opacity 1s 5s,         transform 0.5s;
+  -moz-transition: opacity 1s 5s, -moz-transform 0.5s;
+  -ms-transition: opacity 1s 5s, -ms-transform 0.5s;
+  -o-transition: opacity 1s 5s, -o-transform 0.5s;
+  transition: opacity 1s 5s, transform 0.5s;
   -webkit-transform: translateY(0px);
   -moz-transform: translateY(0px);
   -ms-transform: translateY(0px);
@@ -456,7 +456,7 @@ body {
   padding: 10px 10px 0;
   margin: 20px auto;
   border-radius: 10px;
-  border: 1px solid #E4C652;
+  border: 1px solid #e4c652;
   background: #EEDC94;
 }
 
@@ -558,4 +558,15 @@ body {
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
+}
+
+/* line 549, control-panel.scss */
+.step-step-5 .step:not(.active) {
+  opacity: 1;
+}
+/* line 552, control-panel.scss */
+.step-step-5 .step:not(.active) .content {
+  -webkit-box-shadow: 0 0 10px black;
+  -moz-box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px black;
 }

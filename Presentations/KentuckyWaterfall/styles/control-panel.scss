@@ -138,7 +138,7 @@ body     { pointer-events: none; }
 }
 
 .step:not(.active) {
-	opacity: 0.3;
+	opacity: 0.8;
 }
 
 /* STEP SPECIFIC STYLES */
@@ -536,4 +536,21 @@ body     { pointer-events: none; }
 	-moz-transform: rotateY( 180deg );
 	-o-transform: rotateY( 180deg );
 	transform: rotateY( 180deg );
+}
+
+.step-main-page,
+.step-category-page,
+.step-article-page,
+.step-view-source {
+	
+}
+
+.step-step-5 {
+	.step:not(.active) {
+		opacity: 1;
+
+		.content {
+			@include box-shadow(0 0 10px #000);
+		}
+	}
 }
